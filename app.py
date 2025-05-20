@@ -1,6 +1,4 @@
-from flask import Flask
-import json
-from flask import request
+from flask import Flask, request,jsonify
 
 app = Flask(__name__)
 
@@ -19,7 +17,7 @@ def search_trips():
     destination = request.args.get('destination')
     for trip in trips:
         if trip['destination'] == destination:
-            return json.dumps(trip)
+            return jsonify(trip)
     return "No trip found"
 
 @app.route('/book',methods=['POST'])
