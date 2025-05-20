@@ -28,7 +28,7 @@ def book_trip():
     found_trip = None
     for trip in trips:
         if trip['id'] == json['trip_id']:
-            found_trip = trip['destination']
+            found_trip = trip
     if not found_trip:
         return "Invalid trip id"
 
